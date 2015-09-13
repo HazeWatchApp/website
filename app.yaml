@@ -1,5 +1,5 @@
 application: hazewatcher
-version: 1
+version: alpha1
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -10,20 +10,18 @@ handlers:
   upload: favicon\.ico
 
 - url: /css
-  static_dir: assets/css
+  static_dir: css
 
 - url: /js
-  static_dir: assets/js
+  static_dir: js
 
 - url: /img
-  static_dir: assets/img
+  static_dir: img
 
 - url: .*
-  script: main.app
+  static_files: templates/index.html
+  upload: templates/index.html
 
 libraries:
 - name: webapp2
-  version: "2.5.2"
-
-- name: jinja2
-  version: "latest"
+  version: latest
